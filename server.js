@@ -32,25 +32,6 @@ app.use(express.static(__dirname + "/views"));
 
 app.use(express.json());
 
-// Authentication middleware using ACCESS_TOKEN (optional for demo mode)
-const authenticateToken = (req, res, next) => {
-    const token = req.headers['authorization'] || req.headers['access-token'];
-    const expectedToken = process.env.ACCESS_TOKEN;
-    
-    // Skip authentication if no token is expected (demo mode)
-    if (!expectedToken) {
-        console.log('Running in demo mode - no authentication required');
-        return next();
-    }
-    
-    if (!token || token !== expectedToken) {
-        console.log('Authentication failed, continuing in demo mode');
-        // Continue without authentication for demo purposes
-        return next();
-    }
-    next();
-};
-
 // Root route - redirect to dashboard
 app.get('/', (req, res) => {
   res.redirect('/indexChairmanDaily');

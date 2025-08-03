@@ -1,118 +1,328 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
-body,text {
-    font-family: 'Poppins', sans-serif !important;
+/* Main Dashboard Styles */
+* {
+    box-sizing: border-box;
 }
 
-.select2-container .select2-selection--single {
-    height: 35px;
-    padding-top: 4px;
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    font-size: 14px;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    top: 5px;
+.container-fluid {
+    padding: 0;
 }
 
-.select2-selection__choice {
+/* Dashboard Title */
+.dashboard-title {
+    font-weight: 600;
+    color: #6B2CDD;
+    margin: 0;
+}
+
+/* Filter Styles */
+.filter-row {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-#filterDiv {
-    display: flex;
-    gap: 3rem;
-}
-
-.apexcharts-tooltip.apexcharts-active{
-    padding: 10px;
-    padding-left: 15px;
-}
-.apexcharts-menu-open {
+.dropdown-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
+    align-items: center;
+    min-width: 120px;
 }
 
-#DASHBOARD1 .card {
-    background-color: #fff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.dropdown-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.dropdown-select {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    min-width: 120px;
+    background-color: #fff;
+}
+
+.dropdown-select:focus {
+    border-color: #6B2CDD;
+    box-shadow: 0 0 5px rgba(107, 44, 221, 0.3);
+}
+
+.dropdown-select:hover {
+    border-color: #6B2CDD;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch-container {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-top: 20px;
+}
+
+.toggle-switch-container input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.toggle-switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + .toggle-switch-slider {
+    background-color: #6B2CDD;
+}
+
+input[type="checkbox"]:checked + .toggle-switch-slider:before {
+    transform: translateX(26px);
+}
+
+/* Card Styles */
+.custom-card {
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background: white;
 }
 
-#DASHBOARD1 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.custom-card .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
+    color: #333;
 }
 
-#DASHBOARD1 > div{
-    background-color: #fff !important;
+.custom-card .card-body {
+    padding: 20px;
 }
 
-/* Loading spinner styles */
-.spinner-border {
-    width: 3rem;
-    height: 3rem;
+/* Metric Box Styles */
+.metric-box {
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
 }
 
-/* Notification styles */
+.metric-box h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.metric-box p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Alert Styles */
 .alert {
     border-radius: 8px;
     border: none;
-}
-
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-.alert-warning {
-    background-color: #fff3cd;
-    color: #856404;
+    padding: 15px 20px;
 }
 
 .alert-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border-left: 4px solid #1976d2;
 }
 
-/* Metric box styles */
-.metric-box {
-    border-radius: 8px;
-    transition: transform 0.2s ease;
+.alert-warning {
+    background-color: #fff3e0;
+    color: #ef6c00;
+    border-left: 4px solid #ff9800;
 }
 
-.metric-box:hover {
-    transform: scale(1.05);
+.alert-success {
+    background-color: #e8f5e8;
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
 }
 
-/* Improved dropdown styles */
-select:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+/* Tab Content */
+.tab-content {
+    padding: 20px;
+    background: transparent;
 }
 
-/* Status indicator */
-.status-indicator {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    z-index: 1000;
+.tab-pane {
+    min-height: 400px;
 }
 
-.status-connected {
-    background-color: #28a745;
+/* Button Styles */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #6B2CDD;
+    border-color: #6B2CDD;
+}
+
+.btn-primary:hover {
+    background-color: #5a24b8;
+    border-color: #5a24b8;
+}
+
+/* Spinner */
+.spinner-border {
+    color: #6B2CDD;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .dropdown-container {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .dropdown-select {
+        width: 100%;
+    }
+    
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .dropdown-select {
+        min-width: 100px;
+        font-size: 0.8rem;
+    }
+    
+    .dropdown-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #6B2CDD;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Chart Containers */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+}
+
+/* Dashboard Content */
+#dashboardContent {
+    margin-top: 20px;
+}
+
+#dashboardContent .col-12,
+#dashboardContent .col-md-6,
+#dashboardContent .col-md-4,
+#dashboardContent .col-md-3 {
+    margin-bottom: 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.status-demo {
-    background-color: #ffc107;
-    color: #212529;
+header h1 {
+    margin: 0;
+    font-weight: 600;
 }
 
-.status-error {
-    background-color: #dc3545;
-    color: white;
+/* Error States */
+.error-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+}
+
+.error-state i {
+    font-size: 3rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* Success States */
+.success-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #4caf50;
+}
+
+.success-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
 }
