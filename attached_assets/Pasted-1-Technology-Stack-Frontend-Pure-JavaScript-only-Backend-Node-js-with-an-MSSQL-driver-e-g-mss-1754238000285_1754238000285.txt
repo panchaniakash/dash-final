@@ -1,0 +1,89 @@
+1. Technology Stack
+Frontend: Pure JavaScript only.
+
+Backend: Node.js with an MSSQL driver (e.g. mssql package).
+
+Database: Microsoft SQL Server, accessed via the above .env credentials.
+
+Absolutely NO other languages, frameworks, or libraries outside of the prescribed stack.
+
+2. Folder Structure & File Names
+ZERO changes to any directory names.
+
+ZERO changes to any existing file names.
+
+ZERO breaking changes permitted.
+
+All new or modified files MUST reside exactly where existing files do.
+
+3. Frontend Requirements
+Dynamic Data Fetching
+
+All dropdowns, tables (grids), filters, and charts must retrieve data in real time from MSSQL.
+
+Use AJAX/fetch calls to your Node.js endpoints—no hardcoded JSON or mocks.
+
+UI Fidelity
+
+100% pixel-perfect match to current design.
+
+No modifications to CSS, IDs, classes, component names, or layout.
+
+No additions or removals of UI elements or logic.
+
+Grids
+
+All data grids remain editable exactly as-is.
+
+Structure and column definitions must not change.
+
+Charts
+
+Chart types, positions, labels, filters, and component IDs must remain identical.
+
+Data binding only—no style or configuration changes.
+
+4. Backend Requirements
+Connection
+
+Use the given .env configuration to connect to the local MSSQL instance.
+
+Do not alter or extend the .env file beyond the provided keys.
+
+IMPORTANT: Do not actually attempt to connect to the database during code delivery—connection will fail. Just provide the updated code.
+
+Endpoints
+
+Implement lightweight API routes that mirror existing REST endpoints.
+
+Return data in the same shape and format expected by the frontend.
+
+Optimize queries for performance (indexes, parameterization), but do not alter result schemas.
+
+Security
+
+Use the provided ACCESS_TOKEN for any internal authentication middleware.
+
+Performance
+
+Implement query pooling or caching only in backend—no impact on frontend behavior.
+
+5. Prohibitions
+❌ Changing any UI, component, or layout.
+
+❌ Renaming or restructuring existing charts, tables, filters, or routes.
+
+❌ Introducing any new dependencies beyond Node.js + mssql.
+
+❌ Any breaking API or data-format changes.
+
+6. Delivery
+Provide updated code files in place within the Replit project.
+
+Maintain zero diffs on folder structure and file names.
+
+Do not attempt to connect to the database; just return the upgraded code.
+
+I will run and verify locally against my existing database.
+
+Enforce strict compliance with every bullet above—any deviation is unacceptable.
