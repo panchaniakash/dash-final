@@ -34,8 +34,85 @@ body,text {
 
 #DASHBOARD1 .card {
     background-color: #fff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#DASHBOARD1 .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 #DASHBOARD1 > div{
     background-color: #fff !important;
+}
+
+/* Loading spinner styles */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Notification styles */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Metric box styles */
+.metric-box {
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.metric-box:hover {
+    transform: scale(1.05);
+}
+
+/* Improved dropdown styles */
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Status indicator */
+.status-indicator {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+.status-connected {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-demo {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.status-error {
+    background-color: #dc3545;
+    color: white;
 }
